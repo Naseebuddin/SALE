@@ -2,10 +2,12 @@ import {Image, View, StyleSheet, TouchableOpacity, SafeAreaView} from 'react-nat
 import {scale, verticalScale} from 'react-native-size-matters';
 import imagePath from '../constant/imagePath';
 import color from './../styels/color';
-const GoBackToScreen = ({onButtonClick}) => {
+const GoBackToScreen = ({onButtonClick,
+customWidth,
+}) => {
   return (
-    <SafeAreaView>   
-       <View style={styles.viewStyle}>
+    <SafeAreaView style={{backgroundColor:color.black}}>   
+       <View style={{...styles.viewStyle,width:customWidth}}>
       <TouchableOpacity onPress={onButtonClick}>
         <Image style={styles.imageStyle} source={imagePath.back} />
       </TouchableOpacity>

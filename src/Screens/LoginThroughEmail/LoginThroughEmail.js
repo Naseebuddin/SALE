@@ -10,6 +10,20 @@ import ButtonWithLabel from '../../Components/ButtonWithLabel';
 import auth from '@react-native-firebase/auth';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import navigationString from '../../constant/navigationString';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import StateSet from '../../redux/action/action';
+import { useSelector } from 'react-redux';
+import action from '../../redux/action';
+export const storeData = async (value) => {
+  try {
+    const data = JSON.stringify(value)
+    await AsyncStorage.setItem('email', data)
+    console.log(value, 'this value>>>')
+  } catch (e) {
+    // saving error
+    console.log('error', e)
+  }
+}
 function LoginThroughEmail({ navigation }) {
   const [textInputEmial, setTextInputEmail] = useState("");
   const [email, setEmail] = useState('');
@@ -18,42 +32,30 @@ function LoginThroughEmail({ navigation }) {
     setTextInputEmail(val)
     setEmail(val)
   }
-  const createUser = () => {
-    auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        console.log('User account created & signed in!');
-      })
-      .catch(error => {
-        if (error.code === 'auth/email-already-in-use') {
-          console.log('That email address is already in use!');
-        }
-        if (error.code === 'auth/invalid-email') {
-          console.log('That email address is invalid!');
-        }
-        console.error(error);
-      });
-  }
+  const data = useSelector(state => state)
+  console.log(data, 'reducer state')
   const userSignin = () => {
     auth().signInWithEmailAndPassword(email, password).
-      then(() => {
+      then((res) => {
+        console.log(res.user.email, "this is response>>>??")
+        // StateSet(res.user.email)
+        action.StateSet(res?.user?.email)
         alert('user Login ');
       }).catch(error => {
         alert(error)
       })
     {
     }
-
   }
-  const onSubmit = () => {
+  // console.log(email, password, '>>>>>>>>>')
+  const onSubmit = async () => {
     var emailFormatCheckr = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!textInputEmial.match(emailFormatCheckr)) {
       alert("Please enter your emial properly");
     }
-    else {
-      // createUser();
+    else
+
       userSignin();
-    }
   }
   return (
     <SafeAreaView style={styles.saveStyle}>
@@ -82,6 +84,7 @@ function LoginThroughEmail({ navigation }) {
               <View style={styles.inputStyle}>
                 <TextInputWithLabel
                   width={320}
+                secureTextEntry={true}
                   place={'Password'}
                   textColor={color.white}
                   myValue={(password)}
@@ -89,7 +92,7 @@ function LoginThroughEmail({ navigation }) {
                   placeholderColor={color.btndarkColor}
                 />
               </View>
-              <Text onPress={()=>navigation.navigate(navigationString.CREATELOGINEMAIL)} style={styles.noteTextStyle}>{eng.NEWUSERNOTES}</Text>
+              <Text onPress={() => navigation.navigate(navigationString.CREATELOGINEMAIL)} style={styles.noteTextStyle}>{eng.NEWUSERNOTES}</Text>
             </View>
           </KeyboardAwareScrollView>
         </View>
@@ -111,4 +114,3 @@ function LoginThroughEmail({ navigation }) {
   );
 }
 export default LoginThroughEmail;
-

@@ -12,7 +12,8 @@ export default function TextInputWithLabel({
  onChangeTextInput  ,
   myValue ,
   multipleLine,
-  textColor
+  textColor,
+  secureTextEntry
 }) {
   return (
     <View>
@@ -28,6 +29,7 @@ export default function TextInputWithLabel({
         placeholderTextColor={placeholderColor}
         value={myValue}
         multiline={multipleLine}
+        secureTextEntry={secureTextEntry}
         
 
   

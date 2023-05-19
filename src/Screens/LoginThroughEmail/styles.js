@@ -76,6 +76,8 @@ export default StyleSheet.create({
   btnStyle: {
     flex:0.1,
     justifyContent:'flex-end',
-    marginHorizontal:moderateScale(5)
+    marginHorizontal:moderateScale(5),
+    alignItems:'center'
+
   },
 });

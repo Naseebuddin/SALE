@@ -15,6 +15,7 @@ function ButtonWithLabel({
   onpressButton,
   borderWidth,
   customFlex,
+  ...props
 }) {
   return (
     <View>
@@ -22,11 +23,13 @@ function ButtonWithLabel({
         onPress={onpressButton}
         style={{
           ...styles.btnStyle,
+          props,
           height: height,
-          flex:customFlex,
+          flex: customFlex,
           width: width,
           backgroundColor: btnColor,
-          marginHorizontal: marginHorizontal,borderWidth:borderWidth
+          marginHorizontal: marginHorizontal,
+          borderWidth: borderWidth,
         }}>
         <Image
           resizeMode="stretch"
@@ -35,7 +38,6 @@ function ButtonWithLabel({
         />
         <Text
           style={{
-            
             ...styles.textStyle,
             color: txtColor,
             fontWeight: fontWeight,
@@ -57,14 +59,16 @@ const styles = StyleSheet.create({
     borderColor: color.white,
     borderWidth: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent:'center',
     borderRadius: moderateScale(5),
     marginBottom: moderateScale(10),
+  
   },
   textStyle: {
     fontSize: 16,
     color: color.white,
     marginLeft: moderateScale(12),
     color: color.black,
+    
   },
 });

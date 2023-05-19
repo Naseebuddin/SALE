@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Linking, StatusBar } from 'react-native';
-import { Image, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
-import { verticalScale } from 'react-native-size-matters';
+import React, {useContext, useEffect, useState} from 'react';
+import {Linking, StatusBar} from 'react-native';
+import {Image, SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
+import {verticalScale} from 'react-native-size-matters';
 import ButtonWithLabel from '../../Components/ButtonWithLabel';
 import imagePath from '../../constant/imagePath';
 import eng from './../../constant/lang/eng';
@@ -9,34 +9,35 @@ import navigationString from '../../constant/navigationString';
 import color from './../../styels/color';
 import styles from './styles';
 import auth from '@react-native-firebase/auth';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
-function MainScreen({ navigation }) {
-  const [user, setUser] = useState()
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
+function MainScreen({navigation}) {
+  const [user, setUser] = useState();
   useEffect(() => {
     GoogleSignin.configure({
-      webClientId: '713669375181-8mmpqtr0hut4maro9lurqt3usjmufgjc.apps.googleusercontent.com',
+      webClientId:
+        '713669375181-8mmpqtr0hut4maro9lurqt3usjmufgjc.apps.googleusercontent.com',
     });
-  })
+  });
   const googleSignIn = async () => {
     // Check if your device supports Google Play
-    await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+    await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
     // Get the users ID token
-    const { idToken } = await GoogleSignin.signIn();
+    const {idToken} = await GoogleSignin.signIn();
     // Create a Google credential with the token
     const googleCredential = auth.GoogleAuthProvider.credential(idToken);
     // Sign-in the user with the credential
     const res = await auth().signInWithCredential(googleCredential);
-    setUser({ res })
+    setUser({res});
     console.log('res>>>', res);
   };
   SignOut = async () => {
     try {
       await GoogleSignin.signOut();
-      this.setUser({ user: null })
+      this.setUser({user: null});
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
   return (
     <SafeAreaView style={styles.mainView}>
       <StatusBar />
@@ -82,14 +83,16 @@ function MainScreen({ navigation }) {
           </View>
           <Text style={styles.oRTextstyle}>{eng.OR}</Text>
           <Text
-            onPress={() => navigation.navigate(navigationString.LOGINTHROUGHEMAIL)}
+            onPress={() =>
+              navigation.navigate(navigationString.LOGINTHROUGHEMAIL)
+            }
             style={styles.LoginTextstyle}>
             {eng.LOGINEMAIL}
           </Text>
           <Text style={styles.OlxTextstyle}>{eng.IFYOUCONTI}</Text>
           <Text
             onPress={() => Linking.openURL('https://help.olx.in/hc/en-us')}
-            style={{ ...styles.OlxTextstyle, textDecorationLine: 'underline' }}>
+            style={{...styles.OlxTextstyle, textDecorationLine: 'underline'}}>
             {eng.OLXTERM}
           </Text>
         </View>
@@ -98,4 +101,3 @@ function MainScreen({ navigation }) {
   );
 }
 export default MainScreen;
-

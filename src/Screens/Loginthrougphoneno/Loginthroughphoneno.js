@@ -14,7 +14,7 @@ function Loginthroughphoneno({ navigation }) {
   const [confrim, setConfrim] = useState(null);
   const [displayOTPInput, setDisplayOTPInput] = useState(false);
   const countryCode = '+91'
-  const [code, setCode] = useState('');
+  // const [code, setCode] = useState('');
   function onAuthStateChanged(user) {
     console.log(user)
   }

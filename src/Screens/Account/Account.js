@@ -1,9 +1,12 @@
 import React from 'react';
 import {Text,View} from 'react-native';
-export default function Acount() {
+import navigationString from '../../constant/navigationString';
+export default function Acount({navigation}) {
   return (
     <View>
-      <Text>App</Text>
+     <Text onPress={()=>navigation.navigate(navigationString.SETTING)}>
+      Account
+     </Text>
     </View>
   );
 }

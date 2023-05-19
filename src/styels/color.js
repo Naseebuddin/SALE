@@ -7,7 +7,8 @@ export default {
     btndarkColor:'rgba(53,54,58,255)',
     lightGreen:'rgba(203,246,237,255)',
     ligthYellow:'rgba(254,252,239,255)',
-    inputDarBlack:'rgb(38, 38, 38)'
+    inputDarBlack:'rgb(38, 38, 38)',
+    sliver:'rgb(211,211,211)',
   
   };
   

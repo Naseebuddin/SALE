@@ -1,4 +1,3 @@
-export {default as Login} from './Login/Login';
 export {default as MainScreen} from './MainScreen/MainScreen';
 export {default as LoginthroughPhoneNo} from './Loginthrougphoneno/Loginthroughphoneno';
 export {default as Otpscreen} from './../Screens/Otpscreen/Otpscreen';
@@ -11,3 +10,13 @@ export {default as Myads} from './MyAds/Myads';
 export {default as SearchItem} from './Searchitem/Searchitem';
 export {default as Locations} from './Locations/Locations';
 export {default as CreateLoginEmail} from './CreateLoginEmail/CreateLoginEmail';
+export {default as Setting} from './Settings/Settings';
+export {default as Buycar} from './Buycar/Buycar';
+export {default as Sellcar} from './Sellcar/Sellcar';
+export {default as Olxautos} from './Olxautos/Olxautos';
+export {default as Bikes} from './Bikes/Bikes';
+export {default as Properties} from './Properties/Properties';
+export {default as Jobs} from './Jobs/Jobs';
+export {default as Mobile} from './Mobile/Mobile';
+export {default as Seeall} from './Seeall/Seeall';
+export {default as Details} from './Details/Details';

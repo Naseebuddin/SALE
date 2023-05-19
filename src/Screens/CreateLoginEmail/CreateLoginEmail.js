@@ -97,7 +97,6 @@ function CreateLoginEmail({ navigation }) {
         </View>
       </View>
     </SafeAreaView>
-
   );
 }
 export default CreateLoginEmail;

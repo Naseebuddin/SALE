@@ -1,31 +1,38 @@
-import React, { useEffect } from 'react';
-import { SafeAreaView, StatusBar } from 'react-native';
+import React, {useEffect} from 'react';
+import {SafeAreaView, StatusBar} from 'react-native';
 import Route from './src/Navigations/Routes';
-import { CreateLoginEmail } from './src/Screens';
-import { Provider } from 'react-redux';
-import store from './src/Screens/redux/store';
+import {CreateLoginEmail, Home} from './src/Screens';
+import {Provider} from 'react-redux';
+import {store} from './src/redux/store';
+// import store from './src/redux/store'
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import StateSet from './src/Screens/redux/action/action';
+import StateSet from './src/redux/action/action';
+import SplashScreen from 'react-native-splash-screen';
+import action from './src/redux/action';
+import color from './src/styels/color';
 function App() {
-    useEffect(() => {
-        (async () => {
-            try {
-                const getingItem = await AsyncStorage.getItem('userLogin');
-                const passingItem = JSON.parse(getingItem);
-                if (passingItem) {
-                    StateSet(true);
-                }
-            } catch (e) {
-            }
-        })();
-    }, []);
-    return (
-        <SafeAreaView style={{ flex: 1 }}>
-            <StatusBar />
-            <Provider store={store}>
-                <Route />
-            </Provider>
-        </SafeAreaView>
-    );
+  useEffect(() => {
+    (async () => {
+      try {
+        const getingItem = await AsyncStorage.getItem('email');
+        const passingItem = JSON.parse(getingItem);
+        console.log(passingItem, 'item in the app.js');
+        if (passingItem) {
+          action.StateSet(passingItem);
+        }
+      } catch (e) {}
+    })();
+    setTimeout(() => {
+      SplashScreen.hide;
+    }, 1500);
+  }, []);
+  return (
+    <SafeAreaView style={{flex: 1, backgroundColor: color.realBlack}}>
+      <StatusBar />
+      <Provider store={store}>
+        <Route />
+      </Provider>
+    </SafeAreaView>
+  );
 }
 export default App;

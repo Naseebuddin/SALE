@@ -15,7 +15,6 @@ const [code, setCode] = useState('');
 function onAuthStateChanged(user) {
   // console.log(user)
 }
-
 const confirm = route?.params.confrim
 console.log(confirm,"confirm>>>>>>>>>>>>><>>????")
 useEffect(() => {

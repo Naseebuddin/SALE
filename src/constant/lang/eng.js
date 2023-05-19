@@ -20,7 +20,28 @@ export default {
     NEWUSERNOTES:'if you are a new user please select any other login option from previous page.',
     SEARCHITEMNOTE:'Find Cars, Mobile Phones and more...',
     ENTEREMAILTOCREATEACCOUNT:'Enter your Email to Create Account',
-    PASSWORD:'Password'
+    PASSWORD:'Password',
+    BUYCAR:'Buy Car',
+    SELLCAR:'Sell Car',
+    BROWSECATEGORIES:'Browse Categories',
+    SEEALL:'See all',
+    FRESHRECOMMENDATIONS:'Fresh Recommendations',
+    OLXAUTOS:'OLX AUTOS \n   (CARS)',
+    PROPERTIES:'PROPERTIES',
+    MOBILE:'MOBILE',
+    JOBS:'JOBS',
+    BIKES:'BIKES',
+    DESCRIPTION:'Description',
+    DESCRIPTIONNOTE:'The Chevrolet Suburban is a series of automobiles built by the Chevrolet division of General Motors.\n In production since the 1935 model year, \n the model line is currently in its twelfth generation;\n it is the longest-used automobile nameplate in the world.\n Suburban vehicle means every motor vehicle with a convertible or interchangeable body or with removable seats,\n usable for both passenger and delivery purposes, and including motor vehicles \ncommonly known as station or depot wagons or any vehicle into which access can be gained through the rear by means of a hatch or ...',
+    PETROL:'Petrol',
+    OWNER:'Owner',
+    OWNERSHIP:'2nd',
+    POSTINGDATE:'Posting date',
+    CARNAME:'Chevrolet Suburban',
+    AUTOMATICE:'Automatic',
+    CHAT:'chat',
+    CALL:'Call',
+
 
   };
   
