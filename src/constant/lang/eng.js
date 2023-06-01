@@ -41,6 +41,43 @@ export default {
     AUTOMATICE:'Automatic',
     CHAT:'chat',
     CALL:'Call',
+    CAR:'Cars',
+    PROPERTIESSEN:'Proparties',
+    MOBILESEN:'Mobile',
+    JOBSSEN:'Jobs',
+    BIKESSEN:'Bikes',
+    ELECTRONICSAPPLICATION:'Electronics & Application',
+    COMMERCIAL:'Commercial Vehicles & Spares ',
+    SEEALLCATEGORIES:'See all categories',
+    OFFERING:'What are you offerring?',
+    INCLUDE:'Include some details',
+    BRAND:'Brand',
+    YEAR:'Year',
+    KMDriven:'Km Driven',
+    KEYFEATURES:'Key feature of your item',
+    FUEL:'Fuel',
+    CNGHYBRIDS:'CNG & Hybrids',
+    DIESEL:'Diesel',
+    ELECTRIC:'Electric',
+    LPG:'LPG',
+    PETROL:'PETROL',
+    TRANSMISSION:'Transmssion',
+    MANUAL:'Manual',
+    NOOFOWNER:'No. Of Owners',
+    First:'1st',
+    SECOND:'2nd',
+    THIREDNO:'3rd',
+    FOURTH:'4th',
+    FOURTHPLUS:'4+',
+    ADTITLE:'Ad title',
+    SUGGESTIONS:'Suggestions',
+    ADDITIONALINFORMATION:'Additional information',
+    INCLUDECONDITIONS:'Include condition. features and reasons for selling',
+
+    
+
+    
+
 
 
   };

@@ -40,5 +40,6 @@ export default {
   meter:require('./../assets/image/meter.png'),
   chat1: require('./../assets/image/chat1.png'),
   phoneCalling: require('./../assets/image/phoneCalling.png'),
+  check:require('./../assets/image/check.png'),
 
 };

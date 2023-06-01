@@ -136,6 +136,7 @@ export default function Home({navigation}) {
             <View style={styles.textInputStyle}>
               <Image source={imagePath.search} style={styles.searchIceon} />
               <TextInputWithLabel
+              // onFocus={()=>navigation.navigate(navigationString.CHAT)}
                 place={eng.SEARCHITEMNOTE}
                 placeholderColor={color.darkBlack}
                 width={moderateScale(242)}

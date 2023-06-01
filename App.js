@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
+import React, { useEffect } from 'react';
+import { SafeAreaView, StatusBar } from 'react-native';
 import Route from './src/Navigations/Routes';
-import {CreateLoginEmail, Home} from './src/Screens';
-import {Provider} from 'react-redux';
-import {store} from './src/redux/store';
+import { CreateLoginEmail, Home, Mobile, Sell } from './src/Screens';
+import { Provider } from 'react-redux';
+import { store } from './src/redux/store';
 // import store from './src/redux/store'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import StateSet from './src/redux/action/action';
@@ -20,18 +20,19 @@ function App() {
         if (passingItem) {
           action.StateSet(passingItem);
         }
-      } catch (e) {}
+      } catch (e) { }
     })();
     setTimeout(() => {
       SplashScreen.hide;
     }, 1500);
   }, []);
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: color.realBlack}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: color.realBlack }}>
       <StatusBar />
       <Provider store={store}>
         <Route />
       </Provider>
+      {/* <Mobile/> */}
     </SafeAreaView>
   );
 }

@@ -23,5 +23,6 @@ export default {
     JOBS:'Jobs',
     BIKES:'Bikes',
     DETAILS:'Details',
+    CARS:'Cars',
   };
   

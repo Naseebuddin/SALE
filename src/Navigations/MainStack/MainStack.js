@@ -1,4 +1,4 @@
-import { Buycar, Details, Locations, SearchItem, Sellcar, Setting } from '../../Screens';
+import { Buycar, Cars, Details, Locations, SearchItem, Sellcar, Setting } from '../../Screens';
 import TabRoutes from '../TabRoutes';
 import navigationString from './../../constant/navigationString'
 export default function MainStack(Stack) {
@@ -10,6 +10,7 @@ export default function MainStack(Stack) {
       <Stack.Screen name= {navigationString.SETTING} component={Setting}/>
       <Stack.Screen name={navigationString.SELLCAR} component={Sellcar}/>
       <Stack.Screen name={navigationString.DETAILS} component={Details}/>
+      <Stack.Screen name={navigationString.CARS} component={Cars}/>
     </>
   );
 }

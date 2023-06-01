@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Dimensions,
   Image,
@@ -13,14 +13,14 @@ import ReadMore from '@fawazahmed/react-native-read-more';
 import GoBackToScreen from '../../Components/GoBackToScreen';
 import Share from 'react-native-share';
 import imagePath from '../../constant/imagePath';
-import Carousel, {Pagination} from 'react-native-snap-carousel';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
 import color from '../../styels/color';
 import eng from '../../constant/lang/eng';
-import {moderateScale} from 'react-native-size-matters';
+import { moderateScale } from 'react-native-size-matters';
 import ButtonWithLabel from '../../Components/ButtonWithLabel';
 export const slider_Width = Dimensions.get('window').width + 5;
 export const ITEM_Width = Math.round(slider_Width * 1);
-const Details = ({route, navigation}) => {
+const Details = ({ route, navigation }) => {
   const [heart, setHeart] = useState(false);
   const [index, setIndex] = useState(0);
   const isCarousel = useRef(null);
@@ -36,7 +36,7 @@ const Details = ({route, navigation}) => {
   };
   const myCustomShare = async () => {
     const shareOption = {
-      message: 'this is a test massege',
+      message: 'this is a test massege aaaaaa',
     };
     try {
       const shareRespose = await Share.open(shareOption);
@@ -46,7 +46,7 @@ const Details = ({route, navigation}) => {
   };
   const data = route?.params.item;
   const myimages = data.carImage;
-  let {image1, image2, image3, image4, image5, image6} = myimages;
+  let { image1, image2, image3, image4, image5, image6 } = myimages;
 
   const myPromsImages = [
     {
@@ -75,7 +75,7 @@ const Details = ({route, navigation}) => {
     },
   ];
   console.log(data, '>>>>>>>');
-  const renderItem = ({item}) => {
+  const renderItem = ({ item }) => {
     return (
       <View style={styles.carsoulViewStyle}>
         <ImageBackground
@@ -126,7 +126,7 @@ const Details = ({route, navigation}) => {
           />
         </TouchableOpacity>
       </View>
-      <ScrollView contentContainerStyle={{paddingBottom: moderateScale(60)}}>
+      <ScrollView contentContainerStyle={{ paddingBottom: moderateScale(60) }}>
         <View>
           <Carousel
             layout={'default'}

@@ -20,3 +20,4 @@ export {default as Jobs} from './Jobs/Jobs';
 export {default as Mobile} from './Mobile/Mobile';
 export {default as Seeall} from './Seeall/Seeall';
 export {default as Details} from './Details/Details';
+export {default as Cars } from './Cars/Cars';

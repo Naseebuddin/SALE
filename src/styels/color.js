@@ -9,6 +9,8 @@ export default {
     ligthYellow:'rgba(254,252,239,255)',
     inputDarBlack:'rgb(38, 38, 38)',
     sliver:'rgb(211,211,211)',
+    backgroundSellColor:'rgba(18,20,27,255)',
+    boderSky:'rgb(72,209,204)'
   
   };
   

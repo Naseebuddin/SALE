@@ -13,7 +13,8 @@ export default function TextInputWithLabel({
   myValue ,
   multipleLine,
   textColor,
-  secureTextEntry
+  secureTextEntry,
+  onFocus
 }) {
   return (
     <View>
@@ -30,6 +31,7 @@ export default function TextInputWithLabel({
         value={myValue}
         multiline={multipleLine}
         secureTextEntry={secureTextEntry}
+        onFocus={onFocus}
         
 
   
